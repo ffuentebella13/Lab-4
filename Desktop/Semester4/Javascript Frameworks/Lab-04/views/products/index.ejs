@@ -1,0 +1,30 @@
+<%- include ('../partials/header') %>
+
+<div class="container my-5">
+    <!-- Add in your own product display -->
+<header>
+    <h1>Products</h1>
+    <a href="new" class="btn btn-primary">New Product</a>
+    <hr>
+</header>
+
+<div class="card-deck">
+    <% product.forEach(function (products) { %>
+        <div class="card" style="text-align:center; justify-content: center;align-items: center; ">
+        <img class="card-img-top" src="/images/cart.png"  alt="logo" style="width: 96px; height:96px; ">
+        <div class="card-body">
+            <h5 class="card-title"><%= products.name %></h5>
+            <p class="card-text"><%= products.Description %></p>
+            <div class="price">
+                <p class="card-text" style="margin-top:35%;">
+                    $ <%= products.price %>
+                </p>
+            </div>
+            <p class="card-text"><small class="text-muted">added <%= (products.updatedAt.toLocaleDateString("en-US"))%></small></p>
+          </div>
+    </div>
+        <% }) %>
+</div>
+
+</div>
+<%- include ('../partials/footer') %>

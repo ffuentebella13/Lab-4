@@ -1,0 +1,22 @@
+<%- include ('../partials/header') %>
+
+<div class="container my-5">
+    <!-- Add in your own product display -->
+
+  <div class="card" style="text-align:center; justify-content: center;align-items: center; ">
+
+    <div class="card-body">
+      <img class="card-img-top" src="/images/inventory.png"  alt="logo" style="width: 96px; height:96px; ">
+      <h5 class="card-title"><%= product.name %> <sub><%= (product.updatedAt.toLocaleDateString("en-US"))%> </sub></h5>
+      <p class="card-text">  <%- product.Description %></p>
+      <p class="card-text">$ <%- product.price %></p>
+
+      <a href="/products/" class="btn btn-Danger">Products List</a>
+      <a href="/products/new/" class="btn btn-warning">New Products</a>
+    </div>
+  </div>
+</div>
+
+
+
+<%- include ('../partials/footer') %>
